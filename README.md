@@ -1,5 +1,7 @@
 # Machine Learning Note
 
+github 不支持 LaTeX 公式，然而我懒得去使用一些别的方式去支持，可以通过安装 [chrome 插件](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)解决
+
 [coursera ML](https://www.coursera.org/learn/machine-learning)
 
 ## Week 1
