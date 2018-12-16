@@ -87,7 +87,7 @@ repeat until convergence {
 
 $${\theta_0} = {\theta_0} - \frac{\partial}{\partial\theta_0}J({\theta_0},{\theta_1}) = {\theta_0} - {\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})}$$
 
-$${\theta_1} = {\theta_1} - \frac{\partial}{\partial\theta_1}J({\theta_0},{\theta_1}) = {\theta_1} - {\frac{1}{m}\sum_{i=1}^m(h_\theta((x^{(i)})-y^{(i)}){x^{(i)}})}$$
+$${\theta_1} = {\theta_1} - \frac{\partial}{\partial\theta_1}J({\theta_0},{\theta_1}) = {\theta_1} - {\frac{1}{m}\sum_{i=1}^m(h_\theta((x^{(i)})-y^{(i)}){x^{(1)}})}$$
 
 }
 
@@ -99,10 +99,65 @@ We can derive strcture by clustering(聚类) the data baseed on relationships am
 
 ## Week 2
 
-### Muticariate Linear Regression
+### Muticariate Linear Regression（多元线性回归）
+
 
 | Symbol          | Meaning                                          |
 | --------------- | ------------------------------------------------ |
 | n               | number of features                               |
 | ${x^{(i)}}$     | input (features) of $i^{th}$ training example    |
 | ${x^{(i)}_{j}}$ | value of feature `j` in $i{th}$ training exmaple |
+
+#### mutivariable hypothesis function
+
+Hypothesis:
+
+$$
+h(x) = \begin{bmatrix}
+{\theta_0} & {\theta_1} & \cdots & {\theta_n} 
+\end{bmatrix}
+\begin{bmatrix}
+x_{0} & x_{1} & \cdots & x_{n}
+\end{bmatrix}^T = {\theta}^Tx
+$$
+
+Cost Function:
+
+$$J({\theta}) = \frac{1}{2m}\sum_{i=1}^m{(h_\theta{(x_i)}-{y_i})}^2$$
+
+Gradient descent alorithm:
+
+repeat until convergence {
+
+$$
+{\theta_0} = {\theta_0} - \frac{\partial}{\partial\theta_0}J({\theta})
+$$
+
+$$
+{\theta_j} = {\theta_j} - \frac{\partial}{\partial\theta_j}J({\theta}) 
+$$
+
+(simultaneously update ${\theta_0}, {\theta_j}$)
+
+}
+
+### Gradient Descend in Practice
+
+#### Feature Scalling
+
+$${x_i} = \frac{x_i - \mu_i}{s_i}$$
+
+$\mu_i$ is the **average** of all the values for feature(i) and $s_i$ is standard deviation(max - min).
+
+#### Learning Rate
+
+#### Feature and Polynomial Regression
+
+
+### Normal Equation(正规方程)
+
+$${\theta} = ({X^T}{X})^{-1}{X^T}{y}$$
+
+```Octave
+pinv(X'*X)*X'*y
+```
