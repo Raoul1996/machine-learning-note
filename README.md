@@ -115,10 +115,10 @@ Hypothesis:
 $$
 h(x) = \begin{bmatrix}
 {\theta_0} & {\theta_1} & \cdots & {\theta_n} 
-\end{bmatrix}
+\end{bmatrix}^T
 \begin{bmatrix}
 x_{0} & x_{1} & \cdots & x_{n}
-\end{bmatrix}^T = {\theta}^Tx
+\end{bmatrix} = {\theta}^T{x}
 $$
 
 Cost Function:
@@ -161,3 +161,36 @@ $${\theta} = ({X^T}{X})^{-1}{X^T}{y}$$
 ```Octave
 pinv(X'*X)*X'*y
 ```
+
+## Week 3 Classification and Representation
+
+### Logistic Regression Model
+
+$$
+Cost(h_{\theta}(x),y) = -ylog(h_{\theta}(x)) - (1-y)log(1-h_{\theta}(x))
+$$
+
+$$
+h = g(X{\theta})
+$$
+
+$$
+J({\theta}) =  -\frac{1}{m}\left[\sum_{i=1}^{m}y^{(i)}log(h_{\theta}(x^{(i)})) + (1 - y^{(i)})log(1-h_{\theta}(x^{(i)}))\right] + \frac{\lambda}{2m}\sum_{j = 1}^{n}{\theta}^2_{j}
+$$
+
+$$
+J({\theta})= \frac{1}{m} \cdot ({-y^T}log(h) - {(1-y)^T}log(1-h))
+$$
+
+## Week 4 && Week 5 Neural Networks
+$
+(h_{\Theta}(x)\in\mathbb{R}) 
+$
+
+$
+(h_{\Theta(x)})_i = i^{th} $  output
+
+
+$$
+J({\Theta}) = -\frac{1}{m}\left[\sum_{i=1}^{m}\sum_{k=1}^{K}y^{(i)}_{k}log(h_{\Theta}(x^{(i)}))_k + (1 - y^{(i)}_k)log(1-(h_{\Theta}(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_l+1}({\Theta}_{ji}^{(i)})^{2}
+$$
